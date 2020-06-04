@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yLn-GS-CVd">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Upload Track View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="UploadTrackViewController" customModule="AMapTrack_Demo_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPC-Ba-Mby" customClass="MAMapView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="cEr-Eu-J2t">
+                                <rect key="frame" x="8" y="797" width="398" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgX-Bk-9qp">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="32"/>
+                                        <state key="normal" title="开始轨迹服务"/>
+                                        <connections>
+                                            <action selector="clickeTrackServiceBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vdp-0I-Lno"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCT-eC-VFB">
+                                        <rect key="frame" x="147" y="0.0" width="92" height="32"/>
+                                        <state key="normal" title="开始轨迹采集"/>
+                                        <connections>
+                                            <action selector="clickeGatherBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MHN-Gt-PbJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-dn-09K">
+                                        <rect key="frame" x="294" y="0.0" width="104" height="32"/>
+                                        <state key="normal" title="创建TerminalID"/>
+                                        <connections>
+                                            <action selector="clickeCreateTidBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PeF-pp-M4X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="dKa-x9-Tsj"/>
+                                </constraints>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PmS-Vg-Ei8">
+                                <rect key="frame" x="92.5" y="834" width="229" height="29"/>
+                                <segments>
+                                    <segment title="不自动创建"/>
+                                    <segment title="自动创建TrackID"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="nfe-JN-Guf"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PmS-Vg-Ei8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DKR-hJ-10G"/>
+                            <constraint firstItem="nPC-Ba-Mby" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LYb-Du-VSk"/>
+                            <constraint firstItem="nPC-Ba-Mby" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OdY-fr-xFU"/>
+                            <constraint firstItem="nPC-Ba-Mby" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WzN-4x-QYR"/>
+                            <constraint firstItem="cEr-Eu-J2t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Xfa-z3-I4U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PmS-Vg-Ei8" secondAttribute="bottom" id="ahQ-IT-XB1"/>
+                            <constraint firstAttribute="bottom" secondItem="nPC-Ba-Mby" secondAttribute="bottom" id="cAx-5c-8wh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cEr-Eu-J2t" secondAttribute="trailing" constant="8" id="gtw-cz-iFk"/>
+                            <constraint firstItem="PmS-Vg-Ei8" firstAttribute="top" secondItem="cEr-Eu-J2t" secondAttribute="bottom" constant="5" id="rmb-Xr-3AR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="k71-lk-nqr"/>
+                    <connections>
+                        <outlet property="btnsContainerView" destination="cEr-Eu-J2t" id="dfI-bh-nsS"/>
+                        <outlet property="createTidBtn" destination="Pow-dn-09K" id="uhl-i4-Dn5"/>
+                        <outlet property="gatherBtn" destination="BCT-eC-VFB" id="OsI-eR-bFE"/>
+                        <outlet property="mapView" destination="nPC-Ba-Mby" id="yHb-at-kuR"/>
+                        <outlet property="startTrackServiceBtn" destination="DgX-Bk-9qp" id="HoY-EW-mYj"/>
+                        <outlet property="trackIDSegment" destination="PmS-Vg-Ei8" id="D2m-es-yoY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963.76811594202911" y="-1020.5357142857142"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ae3-mN-Upp">
+            <objects>
+                <tableViewController id="UWJ-Uf-b5F" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bIG-Iw-4hw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection headerTitle="基本功能" id="WeM-G5-i6s">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ka5-WC-AOF" detailTextLabel="v05-T1-hkS" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="AVz-b5-npq">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AVz-b5-npq" id="tcO-lj-KCt">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="轨迹采集" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ka5-WC-AOF">
+                                                    <rect key="frame" x="20" y="10" width="69.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="UploadTrackViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v05-T1-hkS">
+                                                    <rect key="frame" x="20" y="33.5" width="154.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="push" id="mrX-gT-NW5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ZfR-u7-xIf" detailTextLabel="6dD-Rz-HKg" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="2DW-Mv-0MH">
+                                        <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2DW-Mv-0MH" id="xSS-v6-Wku">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="轨迹查询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZfR-u7-xIf">
+                                                    <rect key="frame" x="20" y="10" width="69.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="QueryTrackViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6dD-Rz-HKg">
+                                                    <rect key="frame" x="20" y="33.5" width="148" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="54P-VM-VhN" kind="push" id="NfX-D4-Ld0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="UWJ-Uf-b5F" id="uW1-Y8-nld"/>
+                            <outlet property="delegate" destination="UWJ-Uf-b5F" id="Iyf-ph-s0B"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hGG-83-Oep"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMP-FS-4sW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="-830"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ijh-S0-uks">
+            <objects>
+                <navigationController id="yLn-GS-CVd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j1l-dT-MnO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UWJ-Uf-b5F" kind="relationship" relationship="rootViewController" id="ypl-O9-Sbz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqY-xt-WPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-764" y="-830"/>
+        </scene>
+        <!--Query Track View Controller-->
+        <scene sceneID="0qO-35-EYX">
+            <objects>
+                <viewController id="54P-VM-VhN" customClass="QueryTrackViewController" customModule="AMapTrack_Demo_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f2Y-qw-BuF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elU-SK-tmC" customClass="MAMapView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="mXu-25-DhY">
+                                <rect key="frame" x="8" y="797" width="398" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIk-RX-JDk">
+                                        <rect key="frame" x="0.0" y="0.0" width="199" height="32"/>
+                                        <state key="normal" title="查询轨迹信息"/>
+                                        <connections>
+                                            <action selector="queryTrackInfoAction:" destination="54P-VM-VhN" eventType="touchUpInside" id="ecd-hG-drm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Q8-3B-hM0">
+                                        <rect key="frame" x="199" y="0.0" width="199" height="32"/>
+                                        <state key="normal" title="查询轨迹历史"/>
+                                        <connections>
+                                            <action selector="queryTrackHstAction:" destination="54P-VM-VhN" eventType="touchUpInside" id="W5f-dc-sjf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="zvq-YG-pei"/>
+                                </constraints>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fEb-XV-v6s">
+                                <rect key="frame" x="8" y="834" width="109" height="29"/>
+                                <segments>
+                                    <segment title="不纠偏"/>
+                                    <segment title="纠偏"/>
+                                </segments>
+                                <connections>
+                                    <action selector="correctionSegmentAction:" destination="54P-VM-VhN" eventType="valueChanged" id="U3B-CE-8a4"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Dyj-rv-CkN">
+                                <rect key="frame" x="137" y="834" width="163" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="OfW-NG-g9d"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="不自动补点"/>
+                                    <segment title="自动补点"/>
+                                </segments>
+                                <connections>
+                                    <action selector="recoupSegmentAction:" destination="54P-VM-VhN" eventType="valueChanged" id="M6b-lO-xDX"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="elU-SK-tmC" firstAttribute="leading" secondItem="LNP-af-T0c" secondAttribute="leading" id="0GF-3u-KZW"/>
+                            <constraint firstItem="fEb-XV-v6s" firstAttribute="top" secondItem="mXu-25-DhY" secondAttribute="bottom" constant="5" id="9km-Ti-YBz"/>
+                            <constraint firstAttribute="bottom" secondItem="elU-SK-tmC" secondAttribute="bottom" id="Bev-4S-f9Q"/>
+                            <constraint firstItem="elU-SK-tmC" firstAttribute="top" secondItem="LNP-af-T0c" secondAttribute="top" id="NOf-mn-3V8"/>
+                            <constraint firstItem="Dyj-rv-CkN" firstAttribute="bottom" secondItem="LNP-af-T0c" secondAttribute="bottom" id="Oci-rs-Epw"/>
+                            <constraint firstItem="Dyj-rv-CkN" firstAttribute="leading" secondItem="fEb-XV-v6s" secondAttribute="trailing" constant="20" id="Tkb-OM-wx7"/>
+                            <constraint firstItem="elU-SK-tmC" firstAttribute="trailing" secondItem="LNP-af-T0c" secondAttribute="trailing" id="o4I-Tt-CEz"/>
+                            <constraint firstItem="mXu-25-DhY" firstAttribute="leading" secondItem="LNP-af-T0c" secondAttribute="leading" constant="8" id="pMa-tA-ynC"/>
+                            <constraint firstItem="LNP-af-T0c" firstAttribute="bottom" secondItem="fEb-XV-v6s" secondAttribute="bottom" id="qA0-IT-9vC"/>
+                            <constraint firstItem="LNP-af-T0c" firstAttribute="trailing" secondItem="mXu-25-DhY" secondAttribute="trailing" constant="8" id="uF7-bZ-cc3"/>
+                            <constraint firstItem="fEb-XV-v6s" firstAttribute="leading" secondItem="LNP-af-T0c" secondAttribute="leading" constant="8" id="ulX-L6-CKL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LNP-af-T0c"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NgI-lJ-hnF"/>
+                    <connections>
+                        <outlet property="btnsContainerView" destination="mXu-25-DhY" id="fNR-cq-SwJ"/>
+                        <outlet property="correctionSegment" destination="fEb-XV-v6s" id="uSv-MC-GUc"/>
+                        <outlet property="mapView" destination="elU-SK-tmC" id="ira-cl-Ymd"/>
+                        <outlet property="queryTrackHstBtn" destination="2Q8-3B-hM0" id="iJr-yW-0ZM"/>
+                        <outlet property="queryTrackInfoBtn" destination="SIk-RX-JDk" id="SFp-4q-s3p"/>
+                        <outlet property="recoupSegment" destination="Dyj-rv-CkN" id="dzq-9t-Sfm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SQB-Qi-ep2" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="-348"/>
+        </scene>
+    </scenes>
+</document>
